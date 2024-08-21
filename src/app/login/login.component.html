@@ -1,0 +1,23 @@
+<GridLayout rows="auto, auto, auto, auto" columns="*">
+    <TextField
+      [(ngModel)]="username"
+      hint="Enter your username"
+      class="input-field"
+      row="0"
+    ></TextField>
+
+    <TextField
+      [(ngModel)]="password"
+      hint="Enter your password"
+      secure="true"
+      class="input-field"
+      row="1"
+    ></TextField>
+
+    <Button
+      text="Login"
+      (tap)="onLogin()"
+      class="login-button"
+      row="2"
+    ></Button>
+</GridLayout>
