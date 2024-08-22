@@ -1,0 +1,21 @@
+<StackLayout horizontalAlignment="center" verticalAlignment="center">
+  <ActionBar title="Home" class="action-bar" flat="true">
+    <!-- Flat="true" remove shadows; consider adding other attributes if needed -->
+  </ActionBar>
+
+  <GridLayout
+    rows="auto, *"
+    columns="*"
+    class="view-main"
+    horizontalAlignment="center"
+    verticalAlignment="center"
+  >
+    <Label text="Welcome to the Home Screen!" class="message" row="0"></Label>
+    <Button
+      text="Logout"
+      (tap)="onLogout()"
+      class="logout-button"
+      row="1"
+    ></Button>
+  </GridLayout>
+</StackLayout>
