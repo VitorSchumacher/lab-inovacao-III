@@ -1,21 +1,19 @@
-<GridLayout rows="auto, auto, auto, auto" columns="*">
+<GridLayout rows="auto, auto, auto, auto" columns="*" verticalAlignment="center">
     <TextField
       [(ngModel)]="username"
-      hint="Enter your username"
+      hint="Digite seu registro acadêmico"
       class="input-field"
       row="0"
     ></TextField>
-
     <TextField
       [(ngModel)]="password"
-      hint="Enter your password"
+      hint="Digite sua senha"
       secure="true"
       class="input-field"
       row="1"
     ></TextField>
-
     <Button
-      text="Login"
+      text="Entrar"
       (tap)="onLogin()"
       class="login-button"
       row="2"

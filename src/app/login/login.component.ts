@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../Services/auth.service';
+import { RouterExtensions } from '@nativescript/angular';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +12,12 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private routerExtensions: RouterExtensions) {}
 
   onLogin() {
     if (this.username === 'admin' && this.password === 'admin') {
-      alert('Login successful!');
-      this.router.navigate(['/home']);
+      this.authService.login();
+      this.routerExtensions.navigate(['/home'], { clearHistory: true });
     } else {
       alert('Invalid username or password');
     }
