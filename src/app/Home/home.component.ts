@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from '../Services/auth.service';
 import { RouterExtensions } from '@nativescript/angular';
+import { requestPermissions, takePicture } from '@nativescript/camera';
+import { ImageSource } from '@nativescript/core';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,23 @@ import { RouterExtensions } from '@nativescript/angular';
 export class HomeComponent {
   constructor(private authService: AuthService, private routerExtensions: RouterExtensions) {}
 
-
   onLogout() {
     this.authService.logout();
-    this.routerExtensions.navigate(['/login'],  { clearHistory: true });
+    this.routerExtensions.navigate(['/login'], { clearHistory: true });
+  }
+
+  takePicture() {
+    requestPermissions()
+      .then(() => {
+        return takePicture({ saveToGallery: true });
+      })
+      .then((imageAsset) => {
+        ImageSource.fromAsset(imageAsset).then((imageSource) => {
+          console.log('Image taken: ', imageSource);
+        });
+      })
+      .catch((err) => {
+        console.error('Error -> ' + err.message);
+      });
   }
 }

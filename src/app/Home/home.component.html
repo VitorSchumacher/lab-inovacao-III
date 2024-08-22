@@ -4,7 +4,7 @@
   </ActionBar>
 
   <GridLayout
-    rows="auto, *"
+    rows="auto,auto,auto, *"
     columns="*"
     class="view-main"
     horizontalAlignment="center"
@@ -16,6 +16,13 @@
       (tap)="onLogout()"
       class="logout-button"
       row="1"
+    ></Button>
+    <Image id="myPicture" row="2"/>
+    <Button
+      text="Tirar Foto"
+      (tap)="takePicture()"
+      class="logout-button"
+      row="3"
     ></Button>
   </GridLayout>
 </StackLayout>
