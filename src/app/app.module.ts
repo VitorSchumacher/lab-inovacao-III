@@ -9,16 +9,19 @@ import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
 import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
+import { faceRecognitionComponent } from "./faceRecognition/faceRecognition.component";
+import { MLKitModule } from '@nativescript/mlkit-core/angular';
 
 @NgModule({
   bootstrap: [AppComponent],
-  imports: [NativeScriptModule, AppRoutingModule, NativeScriptFormsModule],
+  imports: [NativeScriptModule, AppRoutingModule, NativeScriptFormsModule, MLKitModule],
   declarations: [
     AppComponent,
     ItemsComponent,
     ItemDetailComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    faceRecognitionComponent,
   ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],

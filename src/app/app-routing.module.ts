@@ -6,8 +6,8 @@ import {
   RouterExtensions,
 } from "@nativescript/angular";
 import { HomeComponent } from "./home/home.component";
-import { ItemService } from "./item/item.service";
 import { AuthService } from "./Services/auth.service";
+import { faceRecognitionComponent } from "./faceRecognition/faceRecognition.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full" },
@@ -26,17 +26,22 @@ const routes: Routes = [
       },
     ],
   },
-  { path: "home", component: HomeComponent, canActivate: [
-    () => {
-      const authService = inject(AuthService);
-      const router = inject(RouterExtensions);
-      if (authService.isAuthenticated()) {
+  {
+    path: "home",
+    component: HomeComponent,
+    canActivate: [
+      () => {
+        const authService = inject(AuthService);
+        const router = inject(RouterExtensions);
+        if (authService.isAuthenticated()) {
+          return true;
+        }
+        router.navigate(["/login"], { clearHistory: true });
         return true;
-      }
-      router.navigate(["/login"], { clearHistory: true });
-      return true;
-    },
-  ], },
+      },
+    ],
+  },
+  { path: "face", component: faceRecognitionComponent },
 ];
 
 @NgModule({

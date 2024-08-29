@@ -1,13 +1,13 @@
 .message {
-    font-size: 24;
-    margin-bottom: 20;
-    color: #2e6b8f;
-  }
+  font-size: 24;
+  margin-bottom: 20;
+  color: #2e6b8f;
+}
 
-  .logout-button {
-    background-color: #d9534f;
-    color: white;
-    font-size: 18;
-    padding: 10;
-    border-radius: 5;
-  }
+.logout-button {
+  background-color: #d9534f;
+  color: white;
+  font-size: 18;
+  padding: 10;
+  border-radius: 5;
+}

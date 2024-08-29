@@ -1,0 +1,24 @@
+<GridLayout
+  rows="auto,auto, *"
+  columns="*"
+  horizontalAlignment="center"
+  verticalAlignment="center"
+>
+  <Image [src]="imageSource" *ngIf="imageSource" row="0"></Image>
+  @if(faceDetectionResult) {
+
+  <GridLayout
+    row="0"
+    verticalAlignment="top"
+    horizontalAlignment="left"
+    borderWidth="2"
+    borderColor="#FF0000"
+    [translateX]="faceDetectionResult.bounds.x / scale"
+    [translateY]="faceDetectionResult.bounds.y / scale"
+    [width]="faceDetectionResult.bounds.width / scale"
+    [height]="faceDetectionResult.bounds.height / scale"
+  >
+  </GridLayout>
+  }
+  <Button text="Confirmar foto" (tap)="onSubmit()" class="logout-button" row="2"></Button>
+</GridLayout>

@@ -4,7 +4,7 @@
   </ActionBar>
 
   <GridLayout
-    rows="auto,auto,auto, *"
+    rows="auto,auto,auto,auto, *"
     columns="*"
     class="view-main"
     horizontalAlignment="center"
@@ -24,5 +24,6 @@
       class="logout-button"
       row="3"
     ></Button>
+    <Image [src]="imageSource" *ngIf="imageSource" row="4" ></Image>
   </GridLayout>
 </StackLayout>

@@ -15,6 +15,8 @@
     "@nativescript/angular": "^18.0.0",
     "@nativescript/camera": "^6.0.0",
     "@nativescript/core": "~8.8.0",
+    "@nativescript/mlkit-core": "^2.1.0",
+    "@nativescript/mlkit-face-detection": "^2.1.0",
     "@nativescript/theme": "^3.1.0",
     "rxjs": "~7.8.0",
     "zone.js": "~0.14.0"
