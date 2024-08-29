@@ -1,8 +1,10 @@
-.view-main{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
+.main-login{
+  background-color: rgb(11, 183, 198);
+}
+.image-icon{
+  width: 35%;
+  height: auto;
+  margin: 0 5% 5%;
 }
 .input-field {
     margin: 1% 5%;

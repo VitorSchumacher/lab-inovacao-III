@@ -1,21 +1,30 @@
-<GridLayout rows="auto, auto, auto, auto" columns="*" verticalAlignment="center">
-    <TextField
-      [(ngModel)]="username"
-      hint="Digite seu registro acadêmico"
-      class="input-field"
-      row="0"
-    ></TextField>
-    <TextField
-      [(ngModel)]="password"
-      hint="Digite sua senha"
-      secure="true"
-      class="input-field"
-      row="1"
-    ></TextField>
-    <Button
-      text="Entrar"
-      (tap)="onLogin()"
-      class="login-button"
-      row="2"
-    ></Button>
+<GridLayout class="main-login">
+<GridLayout
+  rows="auto, auto, auto, auto"
+  columns="*"
+  verticalAlignment="center"
+  class="grid-main-sub"
+>
+  <Image
+    src="~/assets/icon-main.png"
+    row="0"
+    class="image-icon"
+    verticalAlignment="center"
+    horizontalAlignment="center"
+  ></Image>
+  <TextField
+    [(ngModel)]="username"
+    hint="Digite seu registro acadêmico"
+    class="input-field"
+    row="1"
+  ></TextField>
+  <TextField
+    [(ngModel)]="password"
+    hint="Digite sua senha"
+    secure="true"
+    class="input-field"
+    row="2"
+  ></TextField>
+  <Button text="Entrar" (tap)="onLogin()" class="login-button" row="3"></Button>
+</GridLayout>
 </GridLayout>
